@@ -70,7 +70,10 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;justify
   <div class="page-title">Bowhunting Guides</div>
   <div class="page-sub">Dial in your setup before season opens.</div>
 
-  
+  <div class="ad-unit">
+    <div class="ad-label">Advertisement</div>
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
 
   <div class="articles-grid">
     <a class="article" href="/how-to-measure-sight-radius.html">
