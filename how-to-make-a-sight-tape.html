@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Make a Custom Bow Sight Tape — Sight Tape Gen</title>
+<meta name="description" content="Step-by-step guide to making a custom bow sight tape for your slider sight. Measure your radius, get your speed, generate, print, and install in under 5 minutes."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TGDDBC64');</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#ffffff;--bg2:#f7f7f7;--bg3:#f0f0f0;--border:#e8e8e8;--text:#111111;--text2:#555555;--text3:#999999;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px;}
+.nav-logo{font-weight:600;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo-mark{width:22px;height:22px;background:var(--text);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:10px;height:10px;}
+.nav-links{display:flex;gap:20px;font-size:13px;}
+.nav-links a{color:var(--text3);text-decoration:none;}
+.nav-links a:hover{color:var(--text);}
+.coffee-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:6px;font-size:12px;text-decoration:none;white-space:nowrap;}
+.coffee-btn:hover{background:var(--bg2);}
+@media(max-width:600px){.nav-links{display:none;}}
+.wrap{max-width:740px;margin:0 auto;padding:0 24px;}
+.hero{padding:48px 0 28px;}
+.atag{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;}
+h1{font-size:36px;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:10px;}
+@media(max-width:600px){h1{font-size:26px;}}
+.ameta{font-size:13px;color:var(--text3);}
+.cta-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.cta-strip span{font-size:13px;color:var(--text2);}
+.cta-link{background:var(--text);color:white;font-weight:500;font-size:13px;padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+.cta-link:hover{background:#333;}
+.body h2{font-size:22px;font-weight:600;color:var(--text);margin:40px 0 12px;}
+.body h3{font-size:16px;font-weight:600;color:var(--text);margin:22px 0 8px;}
+.body p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
+.body strong{color:var(--text);font-weight:600;}
+.body ul{padding-left:22px;margin-bottom:16px;}
+.body li{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.body a{color:var(--text);font-weight:500;text-decoration:underline;}
+.body a:hover{color:#333;}
+.body{padding-bottom:52px;}
+.callout{background:var(--bg2);border-left:3px solid var(--text);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;}
+.callout p{margin-bottom:0;}
+.related-section{border-top:1px solid var(--border);background:var(--bg2);padding:40px 0;}
+.related-section h3{font-size:20px;font-weight:600;color:var(--text);margin-bottom:16px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr;}}
+.rcard{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;}
+.rcard:hover{border-color:#bbb;}
+.rtag{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.rcard h4{font-size:13px;font-weight:600;color:var(--text);line-height:1.4;}
+footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-left{font-size:12px;color:var(--text3);}
+.footer-right{display:flex;gap:14px;}
+.footer-right a{font-size:12px;color:var(--text3);text-decoration:none;}
+.footer-right a:hover{color:var(--text);}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px;}
+.nav-links{display:flex;gap:20px;font-size:13px;}
+.nav-links a{color:var(--text2);text-decoration:none;}
+.nav-links a:hover{color:var(--text);}
+.coffee-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:7px 14px;border-radius:8px;font-size:12px;text-decoration:none;white-space:nowrap;}
+.coffee-btn:hover{background:var(--text);color:white;}
+@media(max-width:600px){.nav-links{display:none;}}
+.wrap{max-width:740px;margin:0 auto;padding:0 24px;}
+.hero{padding:48px 0 28px;}
+.atag{font-size:10px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+@media(max-width:600px){h1{font-size:36px;}}
+.ameta{font-size:13px;color:var(--text3);}
+.cta-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.cta-strip span{font-size:13px;color:var(--text2);}
+.cta-link{background:var(--text);color:white;font-weight:500;font-size:13px;padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+.cta-link:hover{background:#333;}
+.body h2{font-size:22px;font-weight:600;color:var(--text);margin:40px 0 12px;}
+.body h3{font-size:16px;font-weight:600;color:var(--text);margin:22px 0 8px;}
+.body p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
+.body strong{color:var(--text);font-weight:500;}
+.body ul{padding-left:22px;margin-bottom:16px;}
+.body li{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.body a{color:var(--text);text-decoration:none;}
+.body a:hover{text-decoration:underline;}
+.body{padding-bottom:52px;}
+.callout{background:var(--bg2);border-left:3px solid var(--text);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;}
+.callout p{margin-bottom:0;}
+.step{display:flex;gap:18px;margin-bottom:32px;align-items:flex-start;}
+.snum{font-size:40px;font-weight:600;color:#ebebeb;flex-shrink:0;line-height:1;min-width:34px;}
+.sbody h3{margin-top:0;font-size:17px;}
+.sbody p{margin-bottom:8px;}
+.mistakes{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:24px 0;}
+.mistakes h3{margin-top:0;margin-bottom:12px;}
+.related-section{border-top:1px solid var(--border);background:var(--bg2);padding:40px 0;}
+.related-section h3{font-size:20px;font-weight:600;color:var(--text);margin-bottom:16px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr;}}
+.rcard{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;}
+.rcard:hover{border-color:#bbb;}
+.rtag{font-size:10px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.rcard h4{font-size:13px;font-weight:600;color:var(--text);line-height:1.4;}
+footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-left{font-size:12px;color:var(--text3);}
+.footer-right{display:flex;gap:14px;}
+.footer-right a{font-size:12px;color:var(--text3);text-decoration:none;}
+.footer-right a:hover{color:var(--text);}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGDDBC64" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+    Sight Tape Gen
+  </a>
+  <div class="nav-links"><a href="/how-it-works.html">How it works</a><a href="/guides.html">Guides</a><a href="/support.html">Support</a></div>
+  <a href="https://buymeacoffee.com/SightTapeGen" target="_blank" class="coffee-btn">☕ Buy me a coffee</a>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="atag">Sight Setup</div>
+    <h1>How to Make a Custom Bow Sight Tape</h1>
+    <p class="ameta">⏱ 6 min read · Works for any compound bow with a slider sight</p>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <span>Skip the reading — generate yours in 30 seconds</span>
+  <a href="/" class="cta-link">Generate free →</a>
+</div>
+
+<div class="wrap body">
+
+  <p>A sight tape is a printed strip that goes on your slider sight housing, marking the exact position for every distance. Instead of guessing pin gaps or memorising dial positions, you dial to the yardage and shoot. For bowhunters using a single-pin moveable sight, a custom tape calculated to your exact setup is one of the biggest accuracy upgrades you can make.</p>
+
+  <p>Here's the complete process from measuring your bow to having a tape installed and verified.</p>
+
+  <h2>What you need before you start</h2>
+  <p>Three numbers. That's it.</p>
+  <ul>
+    <li><strong>Sight radius</strong> — distance from your peep to the pin housing at full draw</li>
+    <li><strong>Arrow speed</strong> — either a chronograph reading or your bow's IBO speed plus draw specs</li>
+    <li><strong>Zero distance</strong> — the distance at which you'll set your starting mark</li>
+  </ul>
+  <p>You'll also need a printer, scissors, and tape or adhesive to mount the finished strip.</p>
+
+  <h2>Step by step</h2>
+
+  <div class="step">
+    <div class="snum">01</div>
+    <div class="sbody">
+      <h3>Measure your sight radius</h3>
+      <p>At full draw, measure from the centre of your peep sight hole to the centre of the pin housing on your sight. This is your sight radius. Most compound setups land between 5 and 9 inches.</p>
+      <p>Have a partner help — you need to be at full draw for an accurate measurement. If you have a draw board, use it. Measuring while relaxed gives a different number than at full draw and every mark on your tape will be off.</p>
+      <p>Even a quarter-inch error in this measurement shifts every mark on your tape. Measure twice. See our guide on <a href="/how-to-measure-sight-radius">measuring your sight radius accurately</a> for the full process.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="snum">02</div>
+    <div class="sbody">
+      <h3>Get your arrow speed</h3>
+      <p>The most accurate method is a chronograph. Shoot three arrows and average the readings. This accounts for your actual string, cables, accessories, and shooting style — none of which IBO testing includes.</p>
+      <p>If you don't have a chronograph, use the spec-based estimator on the generator. Enter your IBO speed, draw weight, draw length, and arrow weight. Tick any accessories (peep, silencers, etc.) and it estimates your real speed. It's close enough to generate a working tape that you can then fine-tune at the range.</p>
+      <p><a href="/arrow-speed-vs-draw-weight">Why speed matters more than draw weight</a> — worth reading before your first tape.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="snum">03</div>
+    <div class="sbody">
+      <h3>Choose your zero distance</h3>
+      <p>Your zero is where the first mark sits — the distance at which your sight is perfectly on at your starting position. Most bowhunters use 20 yards. 3D shooters often use 20 or 30. Choose the distance you shoot most consistently and confidently.</p>
+      <p>Everything else on your tape is calculated as an offset from this mark, so getting your zero dialled in at the range before installing your tape is important.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="snum">04</div>
+    <div class="sbody">
+      <h3>Choose your max distance and increments</h3>
+      <p>Set your max based on how you hunt. Treestand hunters in timber rarely shoot past 40–50 yards — a 60 yard max with 10-yard increments covers everything. Western spot-and-stalk hunters or 3D shooters may want 80–100 yards with 5-yard increments for finer precision.</p>
+      <p>More marks means more precision but a more crowded tape. 10-yard increments with half-marks in between is the most practical setup for most bowhunters.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="snum">05</div>
+    <div class="sbody">
+      <h3>Generate your tape</h3>
+      <p>Enter your four numbers into the <a href="/">generator</a>: sight radius, arrow speed (or bow specs), zero distance, and max distance. Hit generate. You'll see the visual tape and a table showing the sight movement in inches for every yardage.</p>
+      <p>Check the numbers look sensible — at 70 yards your sight should be moving around 2–5 inches from your 20-yard zero depending on your speed. If the numbers look way off, double-check your sight radius input first.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="snum">06</div>
+    <div class="sbody">
+      <h3>Print at exactly 100% scale</h3>
+      <p>This is where most people go wrong. When your print dialog opens, find the scale setting and set it to exactly 100%. Do not use "fit to page", "scale to fit", or any automatic sizing. One wrong click and your tape is physically the wrong size — every mark will be consistently off by the same percentage.</p>
+      <p>After printing, use a ruler to verify. Measure the distance between two marks on the printed tape and compare it to the values in the table. They should match within a millimetre.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="snum">07</div>
+    <div class="sbody">
+      <h3>Cut and install</h3>
+      <p>Cut carefully along the outer edge of the tape strip. Apply a thin layer of contact cement, rubber cement, or strong double-sided tape to the back. Position it on your sight housing with the zero mark aligned to your pin position at your zero distance.</p>
+      <p>Some hunters laminate their tape for weather protection before installing. If you shoot in wet conditions, this is worth doing — a rain-soaked paper tape is unreadable when you need it most.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="snum">08</div>
+    <div class="sbody">
+      <h3>Verify at the range before season</h3>
+      <p>A tape generated on paper needs to be confirmed on an actual target. Shoot at your zero distance first — you should be dead on. Then shoot at 40 yards and 60 yards (or your mid and max distances). Small errors of 1–2 inches are normal and expected. Errors larger than 3 inches at 60 yards mean something needs adjusting.</p>
+      <p>See the full verification process in <a href="/verify-sight-tape">how to verify your sight tape is accurate in the field</a>.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>The most common reason tapes are off:</strong> inaccurate speed input. If your tape is consistently high or low at distance, try adjusting your speed by 5–10 fps and regenerating. A chronograph reading is always more accurate than an IBO estimate.</p>
+  </div>
+
+  <h2>Common mistakes</h2>
+
+  <div class="mistakes">
+    <h3>Mistakes that will ruin your tape</h3>
+    <ul>
+      <li><strong>Printing scaled</strong> — always print at 100%. This cannot be stressed enough.</li>
+      <li><strong>Measuring sight radius relaxed</strong> — measure at full draw only. The bow geometry changes when drawn.</li>
+      <li><strong>Using IBO speed without adjustment</strong> — IBO is measured at 70 lb / 30" draw / 350 gr arrow. Your setup is almost certainly different. Always apply the draw weight, draw length, and arrow weight corrections in the estimator.</li>
+      <li><strong>Skipping field verification</strong> — a tape that looks right on paper may have a small error that compounds at distance. Always shoot it before season.</li>
+      <li><strong>Not re-making the tape after moving your sight</strong> — even sliding a sight forward half an inch changes your sight radius and shifts every mark. Any sight adjustment means a new tape.</li>
+    </ul>
+  </div>
+
+  <div class="cta-strip" style="margin-top:40px;margin-bottom:0;">
+    <span>Ready? Generate your custom sight tape in under a minute.</span>
+    <a href="/" class="cta-link">Generate free →</a>
+  </div>
+
+</div>
+
+<div class="related-section">
+  <div class="wrap">
+    <h3>Related guides</h3>
+    <div class="related-grid">
+      <a href="/how-to-measure-sight-radius" class="rcard"><div class="rtag">Sight Setup</div><h4>How to measure your sight radius accurately</h4></a>
+      <a href="/verify-sight-tape" class="rcard"><div class="rtag">Field Tips</div><h4>How to verify your sight tape is accurate in the field</h4></a>
+      <a href="/arrow-speed-vs-draw-weight" class="rcard"><div class="rtag">Arrow Tuning</div><h4>Why arrow speed matters more than draw weight</h4></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2025 Sight Tape Gen · Built for bowhunters · Free forever</div>
+  <div class="footer-right">
+    <a href="/support.html">Support</a>
+    <a href="https://buymeacoffee.com/SightTapeGen" target="_blank">☕ Coffee</a>
+  </div>
+</footer>
+</body>
+</html>

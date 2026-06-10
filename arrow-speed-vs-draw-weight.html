@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why Arrow Speed Matters More Than Draw Weight — Sight Tape Gen</title>
+<meta name="description" content="Bowhunters obsess over draw weight, but it's arrow speed that determines trajectory, kinetic energy, and how your sight tape marks are spaced. Here's what actually matters."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TGDDBC64');</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#ffffff;--bg2:#f7f7f7;--bg3:#f0f0f0;--border:#e8e8e8;--text:#111111;--text2:#555555;--text3:#999999;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px;}
+.nav-logo{font-weight:600;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo-mark{width:22px;height:22px;background:var(--text);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:10px;height:10px;}
+.nav-links{display:flex;gap:20px;font-size:13px;}
+.nav-links a{color:var(--text3);text-decoration:none;}
+.nav-links a:hover{color:var(--text);}
+.coffee-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:6px;font-size:12px;text-decoration:none;white-space:nowrap;}
+.coffee-btn:hover{background:var(--bg2);}
+@media(max-width:600px){.nav-links{display:none;}}
+.wrap{max-width:740px;margin:0 auto;padding:0 24px;}
+.hero{padding:48px 0 28px;}
+.atag{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;}
+h1{font-size:36px;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:10px;}
+@media(max-width:600px){h1{font-size:26px;}}
+.ameta{font-size:13px;color:var(--text3);}
+.cta-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.cta-strip span{font-size:13px;color:var(--text2);}
+.cta-link{background:var(--text);color:white;font-weight:500;font-size:13px;padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+.cta-link:hover{background:#333;}
+.body h2{font-size:22px;font-weight:600;color:var(--text);margin:40px 0 12px;}
+.body h3{font-size:16px;font-weight:600;color:var(--text);margin:22px 0 8px;}
+.body p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
+.body strong{color:var(--text);font-weight:600;}
+.body ul{padding-left:22px;margin-bottom:16px;}
+.body li{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.body a{color:var(--text);font-weight:500;text-decoration:underline;}
+.body a:hover{color:#333;}
+.body{padding-bottom:52px;}
+.callout{background:var(--bg2);border-left:3px solid var(--text);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;}
+.callout p{margin-bottom:0;}
+.related-section{border-top:1px solid var(--border);background:var(--bg2);padding:40px 0;}
+.related-section h3{font-size:20px;font-weight:600;color:var(--text);margin-bottom:16px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr;}}
+.rcard{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;}
+.rcard:hover{border-color:#bbb;}
+.rtag{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.rcard h4{font-size:13px;font-weight:600;color:var(--text);line-height:1.4;}
+footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-left{font-size:12px;color:var(--text3);}
+.footer-right{display:flex;gap:14px;}
+.footer-right a{font-size:12px;color:var(--text3);text-decoration:none;}
+.footer-right a:hover{color:var(--text);}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px;}
+.nav-links{display:flex;gap:20px;font-size:13px;}
+.nav-links a{color:var(--text2);text-decoration:none;}
+.nav-links a:hover{color:var(--text);}
+.coffee-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:7px 14px;border-radius:8px;font-size:12px;text-decoration:none;white-space:nowrap;}
+@media(max-width:600px){.nav-links{display:none;}}
+.wrap{max-width:740px;margin:0 auto;padding:0 24px;}
+.hero{padding:48px 0 28px;}
+.atag{font-size:10px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+@media(max-width:600px){h1{font-size:36px;}}
+.ameta{font-size:13px;color:var(--text3);}
+.cta-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.cta-strip span{font-size:13px;color:var(--text2);}
+.cta-link{background:var(--text);color:white;font-weight:500;font-size:13px;padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+.cta-link:hover{background:#333;}
+.body h2{font-size:22px;font-weight:600;color:var(--text);margin:40px 0 12px;}
+.body h3{font-size:16px;font-weight:600;color:var(--text);margin:22px 0 8px;}
+.body p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
+.body strong{color:var(--text);font-weight:500;}
+.body ul{padding-left:22px;margin-bottom:16px;}
+.body li{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.body a{color:var(--text);text-decoration:none;}
+.body a:hover{text-decoration:underline;}
+.body{padding-bottom:52px;}
+.callout{background:var(--bg2);border-left:3px solid var(--text);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;}
+.callout p{margin-bottom:0;}
+.related-section{border-top:1px solid var(--border);background:var(--bg2);padding:40px 0;}
+.related-section h3{font-size:20px;font-weight:600;color:var(--text);margin-bottom:16px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr;}}
+.rcard{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;}
+.rcard:hover{border-color:#bbb;}
+.rtag{font-size:10px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.rcard h4{font-size:13px;font-weight:600;color:var(--text);line-height:1.4;}
+footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-left{font-size:12px;color:var(--text3);}
+.footer-right{display:flex;gap:14px;}
+.footer-right a{font-size:12px;color:var(--text3);text-decoration:none;}
+.footer-right a:hover{color:var(--text);}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGDDBC64" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+    Sight Tape Gen
+  </a>
+  <div class="nav-links"><a href="/how-it-works.html">How it works</a><a href="/guides.html">Guides</a><a href="/support.html">Support</a></div>
+  <a href="https://buymeacoffee.com/SightTapeGen" target="_blank" class="coffee-btn">☕ Buy me a coffee</a>
+</nav>
+<div class="wrap">
+  <div class="hero">
+    <div class="atag">Arrow Tuning</div>
+    <h1>Why Arrow Speed Matters More Than Draw Weight</h1>
+    <p class="ameta">⏱ 5 min read · The number that actually controls your trajectory</p>
+  </div>
+</div>
+<div class="cta-strip">
+  <span>Know your speed? Generate your custom sight tape.</span>
+  <a href="/" class="cta-link">Generate free →</a>
+</div>
+<div class="wrap body">
+  <p>Walk into any archery shop and you'll hear hunters comparing draw weights. "I shoot 70 pounds." "I bumped up to 75." But draw weight alone tells you almost nothing useful about how your arrow performs — arrow speed tells you everything.</p>
+  <h2>What arrow speed actually determines</h2>
+  <p>Arrow speed, measured in feet per second (fps), is the single number that controls your trajectory. It determines how much your arrow drops over distance, how far apart your sight marks are spaced, and how much kinetic energy reaches the target. Two setups at the same draw weight can produce speeds that differ by 40–60 fps depending on draw length, arrow weight, bow efficiency, and accessories — and that 40 fps difference shifts your 60-yard mark by nearly an inch.</p>
+  <p>This is why <a href="/">the generator</a> asks for speed, not draw weight. Draw weight is an input into speed, not the number that matters for sight tape calculations.</p>
+  <h2>How draw weight fits in</h2>
+  <p>Higher draw weight does produce more speed, but with diminishing returns. Going from 60 to 65 lb adds roughly 10–15 fps. Going from 65 to 70 lb adds another 10–15 fps. Meanwhile, going from a 27" draw to a 29" draw can add 15–20 fps on its own — often more than a 10-pound draw weight increase.</p>
+  <p>Draw length is the most underrated variable in the equation. Longer draw means more power stroke, which means more energy transferred to the arrow. Bowhunters who increase their draw length to match their actual anchor point (rather than shooting artificially short or long) often see significant speed gains without touching their draw weight.</p>
+  <h2>Arrow weight changes everything</h2>
+  <p>A heavier arrow is slower but hits harder at close range and retains kinetic energy better at distance. A lighter arrow is faster and flatter-shooting but loses energy more rapidly. For bowhunters, <strong>6–8 grains per pound of draw weight (GPP)</strong> is the ethical minimum for reliable penetration on big game. At 65 lb, that means a minimum arrow weight of 390 grains.</p>
+  <p>The arrow weight vs speed trade-off also affects your sight tape directly. A 50 fps speed difference between a light and heavy arrow setup changes where every mark sits on your tape. This is why entering your actual arrow weight into the estimator matters.</p>
+  <h2>How temperature and altitude affect speed</h2>
+  <p>Arrow speed is not constant across conditions. In cold weather, string and cable materials stiffen, cam timing changes slightly, and you lose 5–10 fps compared to a warm summer day. At high altitude, reduced air density technically means less drag — but the effect on speed is minimal compared to temperature. If you're hunting in cold conditions, your tape may run slightly long (arrows hitting above the mark at distance). This is one reason field verification before season is non-negotiable.</p>
+  <h2>The takeaway for your sight tape</h2>
+  <p>Use a chronograph. A real speed reading at your actual setup — your draw weight, draw length, arrow weight, and accessories — is always more accurate than an IBO-based estimate. Even a 10 fps difference from your real speed shifts your 60-yard mark noticeably.</p>
+  <p>If you don't have a chronograph, the estimator on the <a href="/">generator</a> applies draw weight, draw length, and arrow weight corrections to the IBO figure. It's not perfect but it gets you close enough for a working tape that you then verify at the range.</p>
+  <div class="callout">
+    <p><strong>The IBO standard</strong> tests at 70 lb draw weight, 30" draw length, and 350 grain arrow weight. If your setup differs from any of these (and it almost certainly does), your real speed will be different from the IBO number on the box. Always adjust before generating your tape.</p>
+  </div>
+  <div class="cta-strip" style="margin-top:40px;margin-bottom:0;">
+    <span>Generate your tape using your real arrow speed.</span>
+    <a href="/" class="cta-link">Generate free →</a>
+  </div>
+</div>
+<div class="related-section">
+  <div class="wrap">
+    <h3>Related guides</h3>
+    <div class="related-grid">
+      <a href="/how-to-make-a-sight-tape" class="rcard"><div class="rtag">Sight Setup</div><h4>How to make a custom bow sight tape</h4></a>
+      <a href="/arrow-spine-chart" class="rcard"><div class="rtag">Arrow Selection</div><h4>Arrow spine chart for compound bows</h4></a>
+      <a href="/arrow-spine-selection" class="rcard"><div class="rtag">Arrow Selection</div><h4>How to choose the right spine for your bow setup</h4></a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-left">© 2025 Sight Tape Gen · Built for bowhunters · Free forever</div>
+  <div class="footer-right"><a href="/support.html">Support</a><a href="https://buymeacoffee.com/SightTapeGen" target="_blank">☕ Coffee</a></div>
+</footer>
+</body>
+</html>

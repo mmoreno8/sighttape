@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Paper Tuning vs Walk-Back Tuning — What Actually Works — Sight Tape Gen</title>
+<meta name="description" content="Paper tuning and walk-back tuning test different things. Understanding both helps you fix the right problem. Here's when to use each and how to interpret the results."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TGDDBC64');</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#ffffff;--bg2:#f7f7f7;--bg3:#f0f0f0;--border:#e8e8e8;--text:#111111;--text2:#555555;--text3:#999999;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px;}
+.nav-logo{font-weight:600;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo-mark{width:22px;height:22px;background:var(--text);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:10px;height:10px;}
+.nav-links{display:flex;gap:20px;font-size:13px;}
+.nav-links a{color:var(--text3);text-decoration:none;}
+.nav-links a:hover{color:var(--text);}
+.coffee-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:6px;font-size:12px;text-decoration:none;white-space:nowrap;}
+.coffee-btn:hover{background:var(--bg2);}
+@media(max-width:600px){.nav-links{display:none;}}
+.wrap{max-width:740px;margin:0 auto;padding:0 24px;}
+.hero{padding:48px 0 28px;}
+.atag{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;}
+h1{font-size:36px;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:10px;}
+@media(max-width:600px){h1{font-size:26px;}}
+.ameta{font-size:13px;color:var(--text3);}
+.cta-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.cta-strip span{font-size:13px;color:var(--text2);}
+.cta-link{background:var(--text);color:white;font-weight:500;font-size:13px;padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+.cta-link:hover{background:#333;}
+.body h2{font-size:22px;font-weight:600;color:var(--text);margin:40px 0 12px;}
+.body h3{font-size:16px;font-weight:600;color:var(--text);margin:22px 0 8px;}
+.body p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
+.body strong{color:var(--text);font-weight:600;}
+.body ul{padding-left:22px;margin-bottom:16px;}
+.body li{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.body a{color:var(--text);font-weight:500;text-decoration:underline;}
+.body a:hover{color:#333;}
+.body{padding-bottom:52px;}
+.callout{background:var(--bg2);border-left:3px solid var(--text);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;}
+.callout p{margin-bottom:0;}
+.related-section{border-top:1px solid var(--border);background:var(--bg2);padding:40px 0;}
+.related-section h3{font-size:20px;font-weight:600;color:var(--text);margin-bottom:16px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr;}}
+.rcard{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;}
+.rcard:hover{border-color:#bbb;}
+.rtag{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.rcard h4{font-size:13px;font-weight:600;color:var(--text);line-height:1.4;}
+footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-left{font-size:12px;color:var(--text3);}
+.footer-right{display:flex;gap:14px;}
+.footer-right a{font-size:12px;color:var(--text3);text-decoration:none;}
+.footer-right a:hover{color:var(--text);}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px;}
+.nav-links{display:flex;gap:20px;font-size:13px;}
+.nav-links a{color:var(--text2);text-decoration:none;}
+.nav-links a:hover{color:var(--text);}
+.coffee-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:7px 14px;border-radius:8px;font-size:12px;text-decoration:none;white-space:nowrap;}
+@media(max-width:600px){.nav-links{display:none;}}
+.wrap{max-width:740px;margin:0 auto;padding:0 24px;}
+.hero{padding:48px 0 28px;}
+.atag{font-size:10px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+@media(max-width:600px){h1{font-size:36px;}}
+.ameta{font-size:13px;color:var(--text3);}
+.cta-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.cta-strip span{font-size:13px;color:var(--text2);}
+.cta-link{background:var(--text);color:white;font-weight:500;font-size:13px;padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+.cta-link:hover{background:#333;}
+.body h2{font-size:22px;font-weight:600;color:var(--text);margin:40px 0 12px;}
+.body h3{font-size:16px;font-weight:600;color:var(--text);margin:22px 0 8px;}
+.body p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
+.body strong{color:var(--text);font-weight:500;}
+.body ul{padding-left:22px;margin-bottom:16px;}
+.body li{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.body a{color:var(--text);text-decoration:none;}
+.body a:hover{text-decoration:underline;}
+.body{padding-bottom:52px;}
+.callout{background:var(--bg2);border-left:3px solid var(--text);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;}
+.callout p{margin-bottom:0;}
+.related-section{border-top:1px solid var(--border);background:var(--bg2);padding:40px 0;}
+.related-section h3{font-size:20px;font-weight:600;color:var(--text);margin-bottom:16px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr;}}
+.rcard{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;}
+.rcard:hover{border-color:#bbb;}
+.rtag{font-size:10px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.rcard h4{font-size:13px;font-weight:600;color:var(--text);line-height:1.4;}
+footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-left{font-size:12px;color:var(--text3);}
+.footer-right{display:flex;gap:14px;}
+.footer-right a{font-size:12px;color:var(--text3);text-decoration:none;}
+.footer-right a:hover{color:var(--text);}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGDDBC64" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+    Sight Tape Gen
+  </a>
+  <div class="nav-links"><a href="/how-it-works.html">How it works</a><a href="/guides.html">Guides</a><a href="/support.html">Support</a></div>
+  <a href="https://buymeacoffee.com/SightTapeGen" target="_blank" class="coffee-btn">☕ Buy me a coffee</a>
+</nav>
+<div class="wrap">
+  <div class="hero">
+    <div class="atag">Tuning</div>
+    <h1>Paper Tuning vs Walk-Back Tuning — What Actually Works</h1>
+    <p class="ameta">⏱ 5 min read · Do both — they test different things</p>
+  </div>
+</div>
+<div class="cta-strip">
+  <span>Tuned and ready? Generate your sight tape free.</span>
+  <a href="/" class="cta-link">Generate free →</a>
+</div>
+<div class="wrap body">
+  <p>Both paper tuning and walk-back tuning are valuable tools — but they catch different problems. Many archers do one and skip the other, then wonder why their arrows don't group consistently at long range. Understanding what each method reveals helps you use the right tool for each problem.</p>
+  <h2>Paper tuning</h2>
+  <p>Stretch a sheet of paper tight in a frame (a wire coat hanger works fine) and shoot through it from 6–8 feet away, aiming at a target behind it. What matters is the shape of the hole the arrow leaves in the paper, not where the hole is.</p>
+  <p>A perfectly tuned setup leaves a <strong>bullet hole</strong> — a round entry point with three clean fletching slits radiating from it. Any additional tearing in the paper indicates the arrow is not flying straight.</p>
+  <h3>How to read the tears</h3>
+  <ul>
+    <li><strong>Left tear</strong> (hole extends left) — arrow's nock end is kicking right. Move rest right, or the arrow may be underspined.</li>
+    <li><strong>Right tear</strong> (hole extends right) — nock end kicking left. Move rest left, or arrow may be overspined.</li>
+    <li><strong>High tear</strong> (hole extends up) — nock end is dropping. Move nocking point down, or lower the rest slightly.</li>
+    <li><strong>Low tear</strong> (hole extends down) — nock end is rising. Move nocking point up.</li>
+    <li><strong>Diagonal tear</strong> — combination of horizontal and vertical issues. Fix the larger tear first, then recheck.</li>
+  </ul>
+  <p>Paper tuning catches arrow flight problems close to the bow — the first few feet where the arrow is recovering from paradox. It's the right starting point for any new setup or after changing arrows or rest.</p>
+  <h2>Walk-back tuning</h2>
+  <p>Set a small aiming point (a coin or small dot of tape) on a large target. Aim at the exact same spot from 10, 20, 30, and 40 yards — do not adjust your sight between shots, just aim at the same point. When you're done, look at where the arrows landed relative to each other.</p>
+  <p>If they form a <strong>vertical line</strong> (arrows drift straight down as distance increases), your rest is perfectly centred and your arrow is launching on the correct plane. If they drift left or right as distance increases, your arrow is launching slightly off-centre and the error compounds at distance.</p>
+  <p>Move your rest in the direction the arrows drifted. If shots walk right as you move back, move the rest to the right. If they walk left, move left. Re-shoot until you get a vertical line.</p>
+  <h3>Why walk-back catches what paper misses</h3>
+  <p>Paper tuning tests arrow flight at 6–8 feet — barely past the bow. A small launch angle error that produces a clean paper hole can still send arrows drifting left or right as distance increases. Walk-back tuning tests this at real hunting distances where small errors become visible. An arrow that looks clean on paper might drift 4 inches left at 40 yards — enough to completely miss a kill zone.</p>
+  <h2>Do them in order</h2>
+  <p>Paper tune first. Get a clean bullet hole before moving on. A messy paper tear means the arrow isn't recovering correctly, and walk-back results won't be meaningful until flight is clean. Once paper tuning gives you a bullet hole, walk-back tune to confirm centre-shot alignment at distance. Then verify your sight tape.</p>
+  <div class="callout">
+    <p><strong>A poorly tuned bow will produce inconsistent results regardless of how accurate your sight tape is.</strong> Tuning is the foundation. A tape generated for a tuned bow is precise. A tape generated for an untuned bow is a precise map of inconsistency.</p>
+  </div>
+  <div class="cta-strip" style="margin-top:40px;margin-bottom:0;">
+    <span>Bow tuned and flying clean? Generate your sight tape.</span>
+    <a href="/" class="cta-link">Generate free →</a>
+  </div>
+</div>
+<div class="related-section">
+  <div class="wrap">
+    <h3>Related guides</h3>
+    <div class="related-grid">
+      <a href="/arrow-spine-selection" class="rcard"><div class="rtag">Arrow Selection</div><h4>How to choose the right arrow spine for your setup</h4></a>
+      <a href="/verify-sight-tape" class="rcard"><div class="rtag">Field Tips</div><h4>How to verify your sight tape is accurate in the field</h4></a>
+      <a href="/arrow-speed-vs-draw-weight" class="rcard"><div class="rtag">Arrow Tuning</div><h4>Why arrow speed matters more than draw weight</h4></a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-left">© 2025 Sight Tape Gen · Built for bowhunters · Free forever</div>
+  <div class="footer-right"><a href="/support.html">Support</a><a href="https://buymeacoffee.com/SightTapeGen" target="_blank">☕ Coffee</a></div>
+</footer>
+</body>
+</html>

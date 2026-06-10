@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sight Tape Gen — Custom Bow Sight Tapes for Bowhunters</title>
+<meta name="description" content="Free custom sight tape generator for bowhunters. Enter your bow specs or arrow speed and get a printable PDF tape for your slider sight."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TGDDBC64');</script>
+<!-- End Google Tag Manager -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#ffffff;
+  --bg2:#f7f7f7;
+  --bg3:#f0f0f0;
+  --border:#e8e8e8;
+  --text:#111111;
+  --text2:#555555;
+  --text3:#999999;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;overflow-x:hidden;}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;}
+.nav-logo{font-weight:600;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo-mark{width:22px;height:22px;background:var(--text);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:10px;height:10px;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{color:var(--text3);text-decoration:none;font-size:13px;}
+.nav-links a:hover{color:var(--text);}
+.coffee-btn{border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:6px;font-size:12px;text-decoration:none;background:var(--bg);white-space:nowrap;font-family:'Inter',sans-serif;}
+.coffee-btn:hover{background:var(--bg2);}
+@media(max-width:600px){.nav-links{display:none;}}
+
+/* GENERATOR LAYOUT */
+.generator-wrap{display:flex;width:100%;min-height:calc(100vh - 52px);}
+@media(max-width:900px){.generator-wrap{flex-direction:column;min-height:auto;}}
+
+/* LEFT PANEL */
+.panel-left{width:380px;flex-shrink:0;border-right:1px solid var(--border);padding:24px;background:var(--bg);overflow-y:auto;}
+@media(max-width:900px){.panel-left{width:100%;border-right:none;border-bottom:1px solid var(--border);}}
+@media(max-width:480px){.panel-left{padding:16px;}}
+
+/* RIGHT PANEL */
+.panel-right{flex:1;min-width:0;padding:24px;background:var(--bg2);overflow-y:auto;}
+@media(max-width:480px){.panel-right{padding:16px;}}
+
+/* FORM */
+.slabel{font-size:10px;font-weight:600;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;}
+.slabel:first-child{margin-top:0;}
+.mode-toggle{display:flex;background:var(--bg2);border-radius:8px;padding:3px;margin-bottom:18px;gap:3px;}
+.mode-btn{flex:1;padding:8px 6px;font-size:12px;font-weight:500;border:none;background:transparent;color:var(--text3);cursor:pointer;font-family:'Inter',sans-serif;border-radius:6px;transition:all 0.15s;line-height:1.3;}
+.mode-btn.active{background:var(--bg);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,0.1);}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.f{display:flex;flex-direction:column;gap:4px;}
+.f label{font-size:11px;color:var(--text3);font-weight:500;}
+.f input,.f select{background:var(--bg2);border:1px solid var(--border);color:var(--text);font-size:13px;padding:8px 10px;border-radius:6px;font-family:'Inter',sans-serif;outline:none;width:100%;-webkit-appearance:none;}
+.f input:focus,.f select:focus{border-color:var(--text);}
+.chk{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);margin-bottom:8px;cursor:pointer;}
+.chk input{accent-color:var(--text);width:14px;height:14px;cursor:pointer;flex-shrink:0;}
+.speed-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;}
+.speed-box .slb{font-size:12px;color:var(--text2);}
+.speed-box .spv{font-size:22px;font-weight:600;color:var(--text);}
+.speed-box .spv span{font-size:12px;font-weight:400;color:var(--text3);margin-left:2px;}
+hr{border:none;border-top:1px solid var(--border);margin:16px 0;}
+.gen-btn{width:100%;padding:13px;background:var(--text);color:white;font-size:14px;font-weight:500;border:none;border-radius:8px;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.15s;margin-top:6px;}
+.gen-btn:hover{background:#333;}
+.gen-btn:active{background:#000;}
+
+/* OUTPUT */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
+@media(max-width:600px){.stats-row{grid-template-columns:repeat(2,1fr);}}
+.stat{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;}
+.stat-val{font-size:20px;font-weight:600;color:var(--text);}
+.stat-label{font-size:10px;color:var(--text3);margin-top:2px;}
+
+.tape-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:16px;}
+.tape-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
+.tape-card-title{font-size:15px;font-weight:600;color:var(--text);}
+.tape-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.tape-btn{font-size:12px;color:var(--text);border:1px solid var(--border);background:var(--bg);padding:7px 12px;border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:4px;transition:all 0.15s;white-space:nowrap;}
+.tape-btn:hover{background:var(--bg2);}
+.tape-btn.primary{background:var(--text);color:white;border-color:var(--text);}
+.tape-btn.primary:hover{background:#333;}
+.tape-layout{display:flex;gap:20px;align-items:flex-start;overflow-x:auto;max-width:100%;}
+@media(max-width:600px){.tape-layout{flex-direction:column;}}
+.tape-strip{background:#fffff8;border:1px solid #bbb;border-radius:3px;width:54px;flex-shrink:0;padding:8px 0;}
+.trow{display:flex;align-items:center;padding:0 5px;}
+.tline{background:#222;height:1px;}
+.tline.maj{flex:1;}
+.tline.min{width:35%;background:#888;}
+.tyard{font-size:8px;color:#222;font-weight:700;margin-left:3px;min-width:16px;font-family:'Inter',sans-serif;}
+.tape-table{flex:1;min-width:200px;}
+.ttr{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:4px;}
+.ttr:last-child{border-bottom:none;}
+.ttd{font-size:12px;color:var(--text2);}
+.ttv{font-size:13px;font-weight:600;color:var(--text);}
+.ttdrop{font-size:11px;color:var(--text3);}
+.print-note{font-size:11px;color:var(--text3);margin-top:12px;text-align:center;}
+
+/* ARROW CARD */
+.arrow-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:16px;}
+.arrow-card-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px;}
+.arrow-card-sub{font-size:12px;color:var(--text2);margin-bottom:14px;}
+.arrow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;}
+@media(max-width:700px){.arrow-grid{grid-template-columns:1fr;}}
+.arrow-rec{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px;}
+.arrow-rec.top{border-color:var(--text);}
+.arrow-top{font-size:10px;color:var(--text);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;display:block;}
+.arrow-spec{font-size:11px;color:var(--text3);display:flex;justify-content:space-between;margin-bottom:2px;}
+.arrow-spec span{color:var(--text2);}
+.tip-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;}
+.tip-box p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* AD UNIT */
+.ad-unit{background:var(--bg);border:1px dashed var(--border);border-radius:8px;padding:12px;text-align:center;margin-bottom:16px;min-height:90px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;}
+.ad-label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;}
+
+/* DONATE MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.donate-modal{background:var(--bg);border-radius:14px;max-width:380px;width:100%;padding:32px 28px 24px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.15);}
+.modal-close-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text3);line-height:1;padding:4px;}
+.modal-close-x:hover{color:var(--text);}
+.donate-modal-icon{font-size:32px;margin-bottom:14px;}
+.donate-modal-title{font-size:18px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.3;}
+.donate-modal-sub{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:22px;}
+.donate-modal-btn{display:block;width:100%;padding:13px;background:var(--text);color:white;font-size:14px;font-weight:500;border:none;border-radius:8px;cursor:pointer;font-family:'Inter',sans-serif;text-align:center;text-decoration:none;margin-bottom:10px;}
+.donate-modal-btn:hover{background:#333;}
+.donate-modal-skip{display:block;width:100%;padding:8px;background:transparent;color:var(--text3);font-size:13px;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-align:center;}
+.donate-modal-skip:hover{color:var(--text);}
+
+/* PAYWALL MODAL */
+.paywall-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:300;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+.paywall-overlay.open{opacity:1;pointer-events:all;}
+.paywall-modal{background:var(--bg);border-radius:14px;max-width:380px;width:100%;padding:32px 28px 24px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.15);}
+.paywall-modal .modal-close-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text3);line-height:1;padding:4px;}
+.paywall-modal .modal-close-x:hover{color:var(--text);}
+.paywall-icon{font-size:32px;margin-bottom:14px;}
+.paywall-title{font-size:18px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.3;}
+.paywall-sub{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:18px;}
+.paywall-features{margin-bottom:20px;}
+.paywall-feature{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text2);margin-bottom:8px;}
+.paywall-check{width:18px;height:18px;background:var(--text);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:white;}
+.paywall-price{display:inline-block;background:var(--text);color:white;font-size:11px;font-weight:600;padding:3px 10px;border-radius:10px;margin-bottom:14px;letter-spacing:0.02em;}
+.paywall-btn{display:block;width:100%;padding:13px;background:var(--text);color:white;font-size:14px;font-weight:500;border:none;border-radius:8px;cursor:pointer;font-family:'Inter',sans-serif;text-align:center;text-decoration:none;margin-bottom:10px;}
+.paywall-btn:hover{background:#333;}
+.paywall-skip{display:block;width:100%;padding:8px;background:transparent;color:var(--text3);font-size:13px;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-align:center;}
+.paywall-skip:hover{color:var(--text);}
+
+/* LOCK HINT */
+.lock-hint{font-size:11px;color:var(--text3);margin-top:5px;display:none;}
+.lock-hint.show{display:block;}
+.unlocked-badge{display:none;font-size:11px;color:#2e7d32;font-weight:500;margin-top:5px;align-items:center;gap:4px;}
+.unlocked-badge.show{display:flex;}
+
+/* PRINT STYLES */
+@media print{
+  nav,
+  .panel-left,
+  .stats-row,
+  .arrow-card,
+  .ad-unit,
+  .tape-actions,
+  .print-note,
+  .modal-overlay{display:none!important;}
+  body{background:white;}
+  .generator-wrap{display:block;}
+  .panel-right{padding:0;background:white;}
+  .tape-card{border:none;padding:0;box-shadow:none;}
+  .tape-layout{flex-direction:row;}
+}
+
+.hidden{display:none!important;}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGDDBC64"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+    </div>
+    Sight Tape Gen
+  </a>
+  <div class="nav-links">
+    <a href="/how-it-works.html">How it works</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/support.html">Support</a>
+  </div>
+  <a href="https://buymeacoffee.com/SightTapeGen" target="_blank" class="coffee-btn">☕ Buy me a coffee</a>
+</nav>
+
+<div class="generator-wrap">
+  <div class="panel-left">
+
+    <div class="mode-toggle">
+      <button class="mode-btn active" id="btn-specs" onclick="switchMode('specs')">I know my bow specs</button>
+      <button class="mode-btn" id="btn-chrono" onclick="switchMode('chrono')">I have arrow speed</button>
+    </div>
+
+    <div id="mode-specs">
+      <div class="slabel">Bow setup</div>
+      <div class="fg">
+        <div class="f"><label>IBO speed (fps)</label><input type="number" id="ibo" value="320" min="200" max="420" oninput="estimateSpeed()"/></div>
+        <div class="f"><label>Draw weight (lb)</label><input type="number" id="dw" value="65" min="40" max="80" oninput="estimateSpeed()"/></div>
+        <div class="f"><label>Draw length (in)</label><input type="number" id="dl" value="28" min="24" max="32" step="0.5" oninput="estimateSpeed()"/></div>
+        <div class="f"><label>Arrow weight (gr)</label><input type="number" id="aw" value="420" min="250" max="700" oninput="estimateSpeed()"/></div>
+      </div>
+      <div class="slabel">Accessories</div>
+      <label class="chk"><input type="checkbox" id="peep" onchange="estimateSpeed()" checked/> Peep sight (−1 fps)</label>
+      <label class="chk"><input type="checkbox" id="kisser" onchange="estimateSpeed()"/> Kisser button (−0.5 fps)</label>
+      <label class="chk"><input type="checkbox" id="silencer" onchange="estimateSpeed()"/> String silencers (−2 fps)</label>
+      <label class="chk"><input type="checkbox" id="dropaway" onchange="estimateSpeed()"/> Drop-away rest (−0.5 fps)</label>
+      <div class="speed-box">
+        <div class="slb">Estimated arrow speed</div>
+        <div class="spv" id="est-speed">282 <span>fps</span></div>
+      </div>
+    </div>
+
+    <div id="mode-chrono" class="hidden">
+      <div class="slabel">Chronograph reading</div>
+      <div class="fg">
+        <div class="f"><label>Arrow speed (fps)</label><input type="number" id="chrono-speed" value="280" min="150" max="450"/></div>
+        <div class="f"><label>Arrow weight (gr)</label><input type="number" id="chrono-aw" value="420" min="200" max="800"/></div>
+      </div>
+    </div>
+
+    <hr/>
+    <div class="slabel">Sight configuration</div>
+    <div class="fg">
+      <div class="f"><label>Sight radius (in)</label><input type="number" id="radius" value="6" min="3" max="14" step="0.25"/></div>
+      <div class="f"><label>Zero distance (yd)</label>
+        <select id="zero">
+          <option value="20" selected>20 yards</option>
+          <option value="30">30 yards</option>
+          <option value="40">40 yards</option>
+        </select>
+      </div>
+      <div class="f">
+        <label>Max distance (yd)</label>
+        <select id="maxd" onchange="onMaxdChange()">
+          <option value="60">60 yards</option>
+          <option value="70" selected>70 yards</option>
+          <option value="80">80 yards 🔒</option>
+          <option value="100">100 yards 🔒</option>
+        </select>
+        <span class="lock-hint" id="lock-hint">🔒 Unlock long range for $5</span>
+        <span class="unlocked-badge" id="unlocked-badge">✓ Long range unlocked</span>
+      </div>
+      <div class="f"><label>Increments</label>
+        <select id="inc">
+          <option value="10" selected>Every 10 yards</option>
+          <option value="5">Every 5 yards</option>
+        </select>
+      </div>
+    </div>
+    <button class="gen-btn" onclick="generateAll()">Generate sight tape →</button>
+  </div>
+
+  <div class="panel-right">
+    <div id="output-area" class="hidden">
+      <div class="stats-row" id="stats-row"></div>
+      <div class="tape-card">
+        <div class="tape-card-header">
+          <div class="tape-card-title">Your Sight Tape</div>
+          <div class="tape-actions">
+            <button class="tape-btn" onclick="window.print()">🖨 Print</button>
+            <button class="tape-btn primary" onclick="exportPDF()">⬇ Download PDF</button>
+          </div>
+        </div>
+        <div class="tape-layout">
+          <div id="tape-visual" class="tape-strip"></div>
+          <div id="tape-table" class="tape-table"></div>
+        </div>
+        <div class="print-note">Print at 100% scale · Cut along outer edge · Stick to sight housing</div>
+      </div>
+
+      <div class="ad-unit" id="ad-unit-mid">
+        <div class="ad-label">Advertisement</div>
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+      </div>
+
+      <div class="arrow-card" id="arrow-card"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PAYWALL MODAL -->
+<div class="paywall-overlay" id="paywall-overlay">
+  <div class="paywall-modal">
+    <button class="modal-close-x" onclick="closePaywall()">✕</button>
+    <div class="paywall-icon">🎯</div>
+    <div class="paywall-price">$5 · one-time unlock</div>
+    <div class="paywall-title">Unlock long-range tapes</div>
+    <div class="paywall-sub">Generate precise sight tapes up to 100 yards — built for western hunting, spot-and-stalk, and competitive 3D archery.</div>
+    <div class="paywall-features">
+      <div class="paywall-feature"><div class="paywall-check">✓</div> 80, 90, and 100 yard tapes</div>
+      <div class="paywall-feature"><div class="paywall-check">✓</div> Every 5-yard increment option</div>
+      <div class="paywall-feature"><div class="paywall-check">✓</div> Unlocked permanently on this device</div>
+    </div>
+    <a href="https://PLACEHOLDER.lemonsqueezy.com/buy/PLACEHOLDER" id="paywall-buy-btn" class="paywall-btn" onclick="storeReturnState()">Unlock for $5 →</a>
+    <button class="paywall-skip" onclick="closePaywall()">No thanks, stay at 70 yards</button>
+  </div>
+</div>
+
+<!-- DONATE MODAL -->
+<div class="modal-overlay" id="donate-overlay">
+  <div class="donate-modal">
+    <button class="modal-close-x" onclick="closeDonateModal()">✕</button>
+    <div class="donate-modal-icon">☕</div>
+    <div class="donate-modal-title">Your tape is ready!</div>
+    <div class="donate-modal-sub">This tool is free and always will be. If it saved you time at the range, a coffee keeps the server running and future updates coming.</div>
+    <a href="https://buymeacoffee.com/SightTapeGen" target="_blank" class="donate-modal-btn" onclick="closeDonateModal()">Buy me a coffee</a>
+    <button class="donate-modal-skip" onclick="closeDonateModal()">No thanks, just show my tape</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+var tapeData=[];
+var tapeConfig={};
+
+/* ── PAYWALL ── */
+var PAYWALL_KEY='stg_longrange_unlocked';
+// ─────────────────────────────────────────────────────────────
+// LEMON SQUEEZY SETUP — replace the two values below once ready
+// 1. LEMON_URL  → your $5 product checkout link from Lemon Squeezy
+// 2. SITE_URL   → your approved domain (e.g. https://sighttapegen.com)
+//                 In Lemon Squeezy dashboard, set the redirect URL to:
+//                 https://sighttapegen.com/?unlocked=1
+//                 (or your Vercel URL while the domain is pending)
+// ─────────────────────────────────────────────────────────────
+var LEMON_URL='https://PLACEHOLDER.lemonsqueezy.com/buy/PLACEHOLDER';
+var SITE_URL='https://PLACEHOLDER.com';
+
+function isUnlocked(){
+  return localStorage.getItem(PAYWALL_KEY)==='1';
+}
+
+function initUnlock(){
+  // Check if returning from successful payment
+  var params=new URLSearchParams(window.location.search);
+  if(params.get('unlocked')==='1'){
+    localStorage.setItem(PAYWALL_KEY,'1');
+    // Clean the URL
+    window.history.replaceState({},'',window.location.pathname);
+  }
+  updateUnlockUI();
+}
+
+function updateUnlockUI(){
+  var maxd=document.getElementById('maxd');
+  var hint=document.getElementById('lock-hint');
+  var badge=document.getElementById('unlocked-badge');
+  var val=parseInt(maxd.value);
+  if(isUnlocked()){
+    hint.classList.remove('show');
+    badge.classList.add('show');
+    // Remove lock symbols from options
+    Array.from(maxd.options).forEach(function(o){
+      o.text=o.text.replace(' 🔒','');
+    });
+  } else {
+    if(val>70){hint.classList.add('show');}else{hint.classList.remove('show');}
+    badge.classList.remove('show');
+  }
+}
+
+function onMaxdChange(){
+  var val=parseInt(document.getElementById('maxd').value);
+  var hint=document.getElementById('lock-hint');
+  if(!isUnlocked() && val>70){
+    hint.classList.add('show');
+  } else {
+    hint.classList.remove('show');
+  }
+}
+
+function openPaywall(){
+  document.getElementById('paywall-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePaywall(){
+  document.getElementById('paywall-overlay').classList.remove('open');
+  document.body.style.overflow='';
+  // Reset select back to 70 if they dismiss without paying
+  var maxd=document.getElementById('maxd');
+  if(!isUnlocked() && parseInt(maxd.value)>70){
+    maxd.value='70';
+    document.getElementById('lock-hint').classList.remove('show');
+  }
+}
+function storeReturnState(){
+  // Build the checkout URL with redirect back to this site
+  var btn=document.getElementById('paywall-buy-btn');
+  var redirectUrl=SITE_URL+'/?unlocked=1';
+  btn.href=LEMON_URL+'?redirect_url='+encodeURIComponent(redirectUrl);
+  sessionStorage.setItem('stg_pending_unlock','1');
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('paywall-overlay').addEventListener('click',function(e){
+    if(e.target===this) closePaywall();
+  });
+});
+
+function switchMode(m){
+  document.getElementById('mode-specs').className=m==='specs'?'':'hidden';
+  document.getElementById('mode-chrono').className=m==='chrono'?'':'hidden';
+  document.getElementById('btn-specs').className='mode-btn'+(m==='specs'?' active':'');
+  document.getElementById('btn-chrono').className='mode-btn'+(m==='chrono'?' active':'');
+}
+
+function estimateSpeed(){
+  var ibo=parseFloat(document.getElementById('ibo').value)||320;
+  var dw=parseFloat(document.getElementById('dw').value)||70;
+  var dl=parseFloat(document.getElementById('dl').value)||30;
+  var aw=parseFloat(document.getElementById('aw').value)||350;
+  var speed=ibo+(dw-70)*3.5+(dl-30)*3-((aw-350)/5);
+  if(document.getElementById('peep').checked) speed-=1;
+  if(document.getElementById('kisser').checked) speed-=0.5;
+  if(document.getElementById('silencer').checked) speed-=2;
+  if(document.getElementById('dropaway').checked) speed-=0.5;
+  speed=Math.max(150,Math.round(speed));
+  document.getElementById('est-speed').innerHTML=speed+' <span>fps</span>';
+}
+
+function getSpeedFps(){
+  var specsMode=!document.getElementById('mode-specs').classList.contains('hidden');
+  if(specsMode) return parseFloat(document.getElementById('est-speed').textContent)||282;
+  return parseFloat(document.getElementById('chrono-speed').value)||280;
+}
+
+function dropInches(fps,yards){
+  var t=(yards*3)/fps;
+  return 0.5*32.174*t*t*12;
+}
+
+function generateAll(){
+  var maxdVal=parseInt(document.getElementById('maxd').value);
+  if(maxdVal>70 && !isUnlocked()){
+    openPaywall();
+    return;
+  }
+  var fps=getSpeedFps();
+  var radius=parseFloat(document.getElementById('radius').value)||6;
+  var zero=parseInt(document.getElementById('zero').value)||20;
+  var maxd=parseInt(document.getElementById('maxd').value)||70;
+  var inc=parseInt(document.getElementById('inc').value)||10;
+  var zeroDrop=dropInches(fps,zero);
+  var dists=[];
+  for(var d=zero;d<=maxd+0.1;d+=inc) dists.push(Math.round(d));
+  tapeData=dists.map(function(d){
+    var drop=dropInches(fps,d)-zeroDrop;
+    var move=(drop/(d*3))*radius;
+    return{d:d,move:move,drop:drop};
+  });
+  tapeConfig={fps:fps,radius:radius,zero:zero,maxd:maxd};
+  renderTapeVisual();
+  renderTapeTable();
+  renderStats(fps,radius,zero,maxd);
+  renderArrows(fps);
+  document.getElementById('output-area').classList.remove('hidden');
+  document.getElementById('output-area').scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(function(){ openDonateModal(); }, 800);
+}
+
+function renderTapeVisual(){
+  var el=document.getElementById('tape-visual');
+  el.innerHTML='';
+  var maxMove=tapeData[tapeData.length-1].move;
+  var totalPx=240;
+  tapeData.forEach(function(m,i){
+    if(i>0){
+      var sp=document.createElement('div');
+      var h=Math.max(5,Math.round((m.move-tapeData[i-1].move)/maxMove*totalPx*0.85));
+      sp.style.height=h+'px';
+      el.appendChild(sp);
+    }
+    var row=document.createElement('div');
+    row.className='trow';
+    row.innerHTML='<div class="tline maj"></div><span class="tyard">'+m.d+'</span>';
+    el.appendChild(row);
+    if(i<tapeData.length-1){
+      var ms=document.createElement('div');ms.style.height='3px';el.appendChild(ms);
+      var mr=document.createElement('div');mr.className='trow';
+      mr.innerHTML='<div class="tline min"></div>';el.appendChild(mr);
+    }
+  });
+}
+
+function renderTapeTable(){
+  var el=document.getElementById('tape-table');
+  el.innerHTML='';
+  tapeData.forEach(function(m){
+    var tr=document.createElement('div');
+    tr.className='ttr';
+    tr.innerHTML='<span class="ttd">'+m.d+' yd</span>'+
+      '<span class="ttv">'+m.move.toFixed(3)+'"</span>'+
+      '<span class="ttdrop">↓ '+m.drop.toFixed(1)+'" drop</span>';
+    el.appendChild(tr);
+  });
+}
+
+function renderStats(fps,radius,zero,maxd){
+  var totalDrop=dropInches(fps,maxd)-dropInches(fps,zero);
+  document.getElementById('stats-row').innerHTML=
+    '<div class="stat"><div class="stat-val">'+Math.round(fps)+'</div><div class="stat-label">fps</div></div>'+
+    '<div class="stat"><div class="stat-val">'+radius+'"</div><div class="stat-label">Sight radius</div></div>'+
+    '<div class="stat"><div class="stat-val">'+zero+'yd</div><div class="stat-label">Zero</div></div>'+
+    '<div class="stat"><div class="stat-val">'+totalDrop.toFixed(1)+'"</div><div class="stat-label">Drop at '+maxd+'yd</div></div>';
+}
+
+function renderArrows(fps){
+  var specsMode=!document.getElementById('mode-specs').classList.contains('hidden');
+  var aw=parseFloat(specsMode?document.getElementById('aw').value:document.getElementById('chrono-aw').value)||420;
+  var dw=parseFloat(document.getElementById('dw').value)||65;
+  var baseSpine=dw>=70?350:dw>=65?400:dw>=58?400:dw>=52?500:600;
+  var spineMap=[300,340,350,400,500,600];
+  var idx=spineMap.indexOf(baseSpine);
+  var huntSpine=spineMap[Math.max(0,idx-1)];
+  var indoorSpine=spineMap[Math.min(spineMap.length-1,idx+1)];
+  var gpp=(aw/dw).toFixed(1);
+  var gppN=parseFloat(gpp);
+  var gppColor=gppN>=6?'#2e7d32':gppN>=4?'#e65100':'#c62828';
+  var gppMsg=gppN>=6?'Good ratio for hunting — solid penetration and kinetic energy.':
+             gppN>=4?'Acceptable — consider a heavier arrow for hunting.':
+             'Too light — risk of poor penetration and potential bow damage.';
+  var disciplines=[
+    {name:'Hunting',icon:'🏹',spine:huntSpine,gppRange:'6–8 GPP',note:'Stiffer spine handles heavy broadheads. Heavier arrow = better penetration.',top:true},
+    {name:'3D Archery',icon:'🎯',spine:baseSpine,gppRange:'5–7 GPP',note:'Balanced weight for flat trajectory at unknown distances.',top:false},
+    {name:'Indoor / Target',icon:'🎪',spine:indoorSpine,gppRange:'4–6 GPP',note:'Lighter, faster arrows for tighter groups at 20 yards.',top:false}
+  ];
+  var cardsHTML=disciplines.map(function(d){
+    return '<div class="arrow-rec'+(d.top?' top':'')+'">'+
+      '<span class="arrow-top">'+d.icon+' '+d.name+'</span>'+
+      '<div style="font-size:30px;font-weight:600;color:var(--text);line-height:1;margin:6px 0 2px;">'+d.spine+'</div>'+
+      '<div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Spine</div>'+
+      '<div class="arrow-spec">Ideal GPP <span>'+d.gppRange+'</span></div>'+
+      '<div style="font-size:11px;color:var(--text3);margin-top:8px;line-height:1.5;">'+d.note+'</div>'+
+      '</div>';
+  }).join('');
+  document.getElementById('arrow-card').innerHTML=
+    '<div class="arrow-card-title">Spine Recommendations</div>'+
+    '<div class="arrow-card-sub">By discipline · Based on your '+dw+'lb draw weight</div>'+
+    '<div class="arrow-grid">'+cardsHTML+'</div>'+
+    '<div class="tip-box"><p><strong style="color:'+gppColor+'">Your setup: '+gpp+' GPP</strong> — '+gppMsg+' Most bowhunters aim for 6–8 GPP for ethical hunting shots.</p></div>';
+}
+
+function exportPDF(){
+  if(!tapeData.length){alert('Generate your tape first.');return;}
+  var doc=new window.jspdf.jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+  var tapeW=18;var pageW=210;var margin=15;var startY=margin+10;
+  doc.setFontSize(13);doc.setFont('helvetica','bold');
+  doc.text('SIGHT TAPE GEN — Custom Sight Tape',margin,margin);
+  doc.setFontSize(7);doc.setFont('helvetica','normal');doc.setTextColor(100,100,100);
+  doc.text('Speed: '+Math.round(tapeConfig.fps)+' fps  |  Radius: '+tapeConfig.radius+'"  |  Zero: '+tapeConfig.zero+'yd  |  PRINT AT 100% SCALE',margin,margin+5);
+  doc.setTextColor(0,0,0);
+  var tapeX=pageW/2-tapeW/2;var tapeH=200;
+  doc.setFillColor(255,255,248);doc.setDrawColor(150,150,150);doc.setLineWidth(0.3);
+  doc.rect(tapeX,startY,tapeW,tapeH,'FD');
+  doc.setFontSize(5);doc.setTextColor(100,100,100);
+  doc.text('▼ CUT HERE ▼',tapeX+tapeW/2,startY-2,{align:'center'});
+  doc.text('▲ CUT HERE ▲',tapeX+tapeW/2,startY+tapeH+4,{align:'center'});
+  var maxMove=tapeData[tapeData.length-1].move;
+  tapeData.forEach(function(m,i){
+    var yPct=m.move/maxMove;var y=startY+yPct*tapeH;
+    doc.setDrawColor(30,30,30);doc.setLineWidth(0.5);
+    doc.line(tapeX+1.5,y,tapeX+tapeW-1.5,y);
+    doc.setFontSize(5.5);doc.setTextColor(30,30,30);
+    doc.text(m.d+'yd',tapeX+tapeW+2,y+1);
+    doc.setFontSize(4.5);doc.setTextColor(120,120,120);
+    doc.text(m.move.toFixed(3)+'"',tapeX+tapeW+2,y+4);
+    if(i<tapeData.length-1){
+      var yMid=startY+((tapeData[i].move+tapeData[i+1].move)/2/maxMove)*tapeH;
+      doc.setDrawColor(150,150,150);doc.setLineWidth(0.2);
+      doc.line(tapeX+1.5,yMid,tapeX+tapeW*0.5,yMid);
+    }
+  });
+  var tableX=tapeX+tapeW+18;var tableY=startY+4;
+  doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(0,0,0);
+  doc.text('Dist.',tableX,tableY);doc.text('Sight move',tableX+16,tableY);doc.text('Drop',tableX+42,tableY);
+  tableY+=2;doc.setDrawColor(180,180,180);doc.setLineWidth(0.2);doc.line(tableX,tableY,tableX+60,tableY);
+  tableY+=5;doc.setFont('helvetica','normal');doc.setFontSize(7.5);
+  tapeData.forEach(function(m){
+    doc.setTextColor(80,80,80);doc.text(m.d+' yd',tableX,tableY);
+    doc.setTextColor(0,0,0);doc.text(m.move.toFixed(3)+'"',tableX+16,tableY);
+    doc.setTextColor(120,120,120);doc.text(m.drop.toFixed(2)+'"',tableX+42,tableY);
+    tableY+=6;
+  });
+  tableY+=4;doc.setFontSize(6);doc.setTextColor(150,150,150);
+  doc.text('SightTapeGen.com · Free forever for bowhunters',tableX,tableY);
+  doc.save('sight-tape-'+Math.round(tapeConfig.fps)+'fps-'+tapeConfig.zero+'yd-zero.pdf');
+}
+
+function openDonateModal(){
+  document.getElementById('donate-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDonateModal(){
+  document.getElementById('donate-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('donate-overlay').addEventListener('click',function(e){
+  if(e.target===this) closeDonateModal();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape') closeDonateModal();});
+
+estimateSpeed();
+initUnlock();
+</script>
+</body>
+</html>
