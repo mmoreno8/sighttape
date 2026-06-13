@@ -116,7 +116,9 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0;}
 .tline{background:#222;height:1px;}
 .tline.maj{flex:1;}
 .tline.min{width:35%;background:#888;}
-.tyard{font-size:8px;color:#222;font-weight:700;margin-left:3px;min-width:16px;font-family:'Inter',sans-serif;}
+.tline.minor-tick{width:50%;background:#bbb;}
+.tyard{font-size:7px;color:#666;font-weight:500;margin-left:3px;min-width:16px;font-family:'Inter',sans-serif;}
+.tyard.major{font-size:9px;color:#222;font-weight:700;}
 .tape-table{flex:1;min-width:200px;}
 .ttr{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:4px;}
 .ttr:last-child{border-bottom:none;}
@@ -539,7 +541,8 @@ function renderTapeVisual(){
     }
     var row=document.createElement('div');
     row.className='trow';
-    row.innerHTML='<div class="tline maj"></div><span class="tyard">'+m.d+'</span>';
+    var isMajor=m.d%10===0;
+    row.innerHTML='<div class="tline'+(isMajor?' maj':' maj minor-tick')+'"></div><span class="tyard'+(isMajor?' major':'')+'">'+m.d+'</span>';
     el.appendChild(row);
     if(i<tapeData.length-1){
       var ms=document.createElement('div');ms.style.height='3px';el.appendChild(ms);
