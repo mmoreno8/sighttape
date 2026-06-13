@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kinetic Energy & FOC: The Numbers Every Bowhunter Should Know | Sight Tape Gen</title>
+<meta name="description" content="Complete kinetic energy and FOC charts for bowhunters. Learn how arrow weight, speed, and front-of-center balance affect penetration on game. Includes KE tables by draw weight."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<meta name="google-adsense-account" content="ca-pub-5283643007459507">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5283643007459507" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TGDDBC64');</script>
+<!-- End Google Tag Manager -->
+<style>
+:root{--bg:#ffffff;--bg2:#f7f7f7;--border:#e8e8e8;--text:#111111;--text2:#555555;--text3:#999999;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;}
+.nav-logo{font-weight:600;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo-mark{width:22px;height:22px;background:var(--text);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:10px;height:10px;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{color:var(--text3);text-decoration:none;font-size:13px;}
+.nav-links a:hover{color:var(--text);}
+@media(max-width:600px){.nav-links{display:none;}}
+.article-wrap{max-width:760px;margin:0 auto;padding:48px 24px;}
+.breadcrumb{font-size:12px;color:var(--text3);margin-bottom:24px;}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--text);}
+.article-cat{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;}
+h1{font-size:32px;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:12px;}
+.article-meta{font-size:12px;color:var(--text3);margin-bottom:32px;}
+.article-body p{color:var(--text2);margin-bottom:18px;}
+.article-body h2{font-size:20px;font-weight:600;color:var(--text);margin:36px 0 12px;}
+.article-body h3{font-size:16px;font-weight:600;color:var(--text);margin:24px 0 8px;}
+.article-body ul{color:var(--text2);padding-left:20px;margin-bottom:18px;}
+.article-body ul li{margin-bottom:6px;}
+.article-body strong{color:var(--text);}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:13px;}
+th{background:var(--text);color:white;font-weight:600;padding:10px 12px;text-align:left;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text2);}
+tr:nth-child(even) td{background:var(--bg2);}
+td.good{color:#2e7d32;font-weight:500;}
+td.caution{color:#e65100;font-weight:500;}
+td.low{color:#c62828;}
+.ad-unit{background:var(--bg2);border:1px dashed var(--border);border-radius:8px;padding:12px;text-align:center;margin:36px 0;min-height:90px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;}
+.ad-label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;}
+.cta-box{background:var(--bg2);border-radius:10px;padding:28px;text-align:center;margin:40px 0;}
+.cta-box h3{font-size:18px;font-weight:600;margin-bottom:8px;}
+.cta-box p{font-size:13px;color:var(--text2);margin-bottom:20px;}
+.cta-btn{display:inline-block;background:var(--text);color:white;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;}
+.cta-btn:hover{background:#333;}
+.highlight-box{background:var(--bg2);border-left:3px solid var(--text);border-radius:0 8px 8px 0;padding:16px 20px;margin:24px 0;}
+.highlight-box p{margin:0;font-size:13px;color:var(--text2);}
+.formula-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;margin:24px 0;text-align:center;}
+.formula-box .formula{font-size:18px;font-weight:600;color:var(--text);margin-bottom:8px;font-family:monospace;}
+.formula-box .formula-note{font-size:12px;color:var(--text3);}
+.verdict{background:var(--text);color:white;border-radius:10px;padding:24px;margin:32px 0;}
+.verdict h3{font-size:16px;font-weight:600;margin-bottom:12px;color:white;}
+.verdict p{font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:8px;}
+.verdict p:last-child{margin:0;}
+footer{border-top:1px solid var(--border);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;background:var(--bg);flex-wrap:wrap;gap:12px;margin-top:64px;}
+.footer-copy{font-size:12px;color:var(--text3);}
+.coffee-btn{border:1px solid var(--border);color:var(--text);padding:7px 14px;border-radius:6px;font-size:12px;text-decoration:none;background:var(--bg);white-space:nowrap;}
+.coffee-btn:hover{background:var(--bg2);}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGDDBC64" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+    </div>
+    Sight Tape Gen
+  </a>
+  <div class="nav-links">
+    <a href="/how-it-works.html">How it works</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/support.html">Support</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Kinetic Energy & FOC Chart</div>
+  <div class="article-cat">Arrows</div>
+  <h1>Kinetic Energy & FOC: The Numbers Every Bowhunter Should Know</h1>
+  <div class="article-meta">June 13, 2026 · 8 min read</div>
+
+  <div class="article-body">
+
+    <p>Speed gets the headlines. Arrow weight, kinetic energy, and front-of-center balance determine whether your arrow punches through vitals or glances off bone. These are the numbers that separate a complete passthrough from a marginal hit — and most bowhunters have never calculated them for their own setup. Here's what they mean and what they should be for the game you're hunting.</p>
+
+    <div class="ad-unit">
+      <div class="ad-label">Advertisement</div>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5283643007459507" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <h2>Kinetic Energy (KE): What It Is and How to Calculate It</h2>
+
+    <p>Kinetic energy is the energy an arrow carries at a given speed. It's the most commonly cited penetration metric in bowhunting and determines, in combination with your broadhead, how effectively your arrow will drive through a deer's hide, rib cage, and vitals.</p>
+
+    <div class="formula-box">
+      <div class="formula">KE = (Arrow Weight × Speed²) ÷ 450,240</div>
+      <div class="formula-note">Arrow weight in grains · Speed in fps · Result in foot-pounds (ft·lbs)</div>
+    </div>
+
+    <p>For example: a 420 grain arrow at 275 fps produces <strong>70.5 ft·lbs</strong> of kinetic energy. A 500 grain arrow at the same speed produces <strong>83.9 ft·lbs</strong>. The heavier arrow hits harder — even at the same speed. And because heavier arrows retain velocity better downrange, the gap widens at distance.</p>
+
+    <h2>KE Recommendations by Game Animal</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Game Animal</th>
+          <th>Minimum KE (ft·lbs)</th>
+          <th>Recommended KE</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Small game (turkey, rabbit)</td><td class="good">25+</td><td class="good">25–35</td><td>Low weight needed; accuracy more critical</td></tr>
+        <tr><td>Whitetail deer</td><td class="caution">40+</td><td class="good">50–65</td><td>40 is minimum; 50+ gives margin on poor angles</td></tr>
+        <tr><td>Mule deer / pronghorn</td><td class="caution">45+</td><td class="good">55–70</td><td>Longer shots mean more energy lost downrange</td></tr>
+        <tr><td>Black bear</td><td class="caution">55+</td><td class="good">65–80</td><td>Dense fat layer requires higher penetration energy</td></tr>
+        <tr><td>Elk / caribou</td><td class="low">65+</td><td class="good">75–100+</td><td>Large body mass; complete passthrough essential</td></tr>
+        <tr><td>Moose</td><td class="low">75+</td><td class="good">90–120+</td><td>Heaviest bowhuntable big game; maximum KE required</td></tr>
+      </tbody>
+    </table>
+
+    <h2>KE Reference Table: Common Setups</h2>
+
+    <p>Use this table to estimate your kinetic energy from your arrow weight and measured speed. Values assume actual chronographed speed with your hunting arrow — not IBO rating.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Arrow Weight (grains)</th>
+          <th>250 fps</th>
+          <th>265 fps</th>
+          <th>280 fps</th>
+          <th>295 fps</th>
+          <th>310 fps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>350 gr</td><td>48.6 ft·lbs</td><td>54.6 ft·lbs</td><td>61.0 ft·lbs</td><td>67.7 ft·lbs</td><td>74.8 ft·lbs</td></tr>
+        <tr><td>400 gr</td><td>55.6 ft·lbs</td><td>62.5 ft·lbs</td><td>69.7 ft·lbs</td><td>77.4 ft·lbs</td><td>85.5 ft·lbs</td></tr>
+        <tr><td>450 gr</td><td>62.5 ft·lbs</td><td>70.3 ft·lbs</td><td>78.4 ft·lbs</td><td>87.1 ft·lbs</td><td>96.2 ft·lbs</td></tr>
+        <tr><td>500 gr</td><td>69.4 ft·lbs</td><td>78.1 ft·lbs</td><td>87.1 ft·lbs</td><td>96.8 ft·lbs</td><td>106.9 ft·lbs</td></tr>
+        <tr><td>550 gr</td><td>76.4 ft·lbs</td><td>85.9 ft·lbs</td><td>95.8 ft·lbs</td><td>106.4 ft·lbs</td><td>117.6 ft·lbs</td></tr>
+        <tr><td>600 gr</td><td>83.3 ft·lbs</td><td>93.7 ft·lbs</td><td>104.6 ft·lbs</td><td>116.1 ft·lbs</td><td>128.3 ft·lbs</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box"><p><strong>Important:</strong> Your IBO speed and your hunting arrow speed are very different numbers. A bow rated 310 IBO may only chrono 275 fps with a 450 grain hunting arrow. Always use your actual chronographed speed with your hunting setup when calculating KE. Broadhead weight matters too — a 125 grain broadhead vs. 100 grain changes your total arrow weight and therefore your speed <em>and</em> your KE.</p></div>
+
+    <h2>Momentum: The Other Number That Matters</h2>
+
+    <p>KE tells you how much energy the arrow carries. <strong>Momentum</strong> tells you how well it maintains forward motion through resistance — hide, muscle, and bone. A lighter, faster arrow and a heavier, slower arrow might have similar KE, but the heavier arrow will penetrate further because momentum resists deceleration better.</p>
+
+    <div class="formula-box">
+      <div class="formula">Momentum = (Arrow Weight × Speed) ÷ 225,400</div>
+      <div class="formula-note">Arrow weight in grains · Speed in fps · Result in slug·ft/s</div>
+    </div>
+
+    <p>For penetration on tough-angled shots and larger animals, momentum is arguably a more reliable predictor than KE alone. Elk hunters, bear hunters, and anyone who expects marginal shot angles should optimize for momentum — which means going heavier on arrow weight, not faster on bow speed.</p>
+
+    <div class="ad-unit">
+      <div class="ad-label">Advertisement</div>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5283643007459507" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <h2>Front of Center (FOC): Arrow Balance Explained</h2>
+
+    <p>FOC is the percentage of an arrow's total length that sits in front of its balance point (center of mass). A higher FOC means the arrow is nose-heavy, which improves flight stability and penetration — the tip drives forward through resistance rather than fishtailing.</p>
+
+    <div class="formula-box">
+      <div class="formula">FOC% = ((Balance Point − Arrow Length ÷ 2) ÷ Arrow Length) × 100</div>
+      <div class="formula-note">Balance point and arrow length measured from nock groove to tip (not including nock)</div>
+    </div>
+
+    <p>To find your balance point: hold the arrow horizontal on your finger and find where it balances. Measure from the nock groove to that point. If your arrow is 28 inches long and balances at 16 inches, your FOC is ((16 − 14) ÷ 28) × 100 = <strong>7.1%</strong>.</p>
+
+    <h2>FOC Recommendations</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>FOC %</th>
+          <th>Rating</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Under 7%</td><td class="low">Too low</td><td>Poor flight stability; avoid for hunting</td></tr>
+        <tr><td>7–11%</td><td class="caution">Standard</td><td>Acceptable for short-range whitetail hunting</td></tr>
+        <tr><td>11–15%</td><td class="good">Optimal</td><td>Excellent balance of flight and penetration; ideal for most bowhunters</td></tr>
+        <tr><td>15–19%</td><td class="good">High FOC</td><td>Preferred for elk, bear, and big game requiring deep penetration</td></tr>
+        <tr><td>19%+</td><td class="good">Extreme FOC</td><td>Specialty setups for maximum penetration; some flight adjustment required</td></tr>
+      </tbody>
+    </table>
+
+    <p>You can increase FOC by adding weight to the front of the arrow — a heavier broadhead, brass inserts, or a heavier point. Going from a 100 grain to a 125 grain broadhead typically adds 1–2% FOC. Using heavy brass inserts (50+ grains) alongside a 100 grain head can push FOC into the 15–20% range for a penetration-optimized elk setup.</p>
+
+    <h2>How Arrow Weight Affects Your Sight Tape</h2>
+
+    <p>Here's where all these numbers come back to your actual hunting accuracy: every grain of arrow weight changes your trajectory. A 450 grain arrow drops significantly more at 60 yards than a 380 grain arrow from the same bow. Your sight tape — the yardage scale on your single-pin sight — must be calibrated to your exact arrow weight or your distance marks will be off.</p>
+
+    <p>If you build an optimal FOC setup by adding a heavier insert or switching to a 125 grain broadhead, your arrow weight has changed. Your old sight tape is no longer accurate. Rebuild it at <a href="/">SightTapeGen</a> by entering your new total arrow weight (shaft + insert + nock + fletching + broadhead) and your bow's specs. The generator accounts for the actual trajectory of your specific setup so every yardage mark on your tape is correct.</p>
+
+    <div class="verdict">
+      <h3>The Bottom Line</h3>
+      <p><strong>For whitetail:</strong> Aim for 50–65 ft·lbs KE and 11–15% FOC. A 400–450 grain arrow at 270–290 fps hits this target comfortably from most 60–70 lb compound bows.</p>
+      <p><strong>For elk or bear:</strong> Prioritize momentum over speed. A 500–550 grain arrow at 265–275 fps with 15%+ FOC and a fixed blade broadhead is a proven combination for complete passthroughs on large game.</p>
+      <p><strong>Either way:</strong> Calculate your actual numbers from your chronographed speed and measured arrow weight — not IBO ratings and catalog specs. The numbers that matter are the ones your setup actually produces.</p>
+    </div>
+
+  </div>
+
+  <div class="cta-box">
+    <h3>Changed your arrow weight? Recalibrate your sight tape.</h3>
+    <p>Adding weight for better FOC or switching broadheads changes your trajectory. Get a custom tape for your new setup in seconds.</p>
+    <a href="/" class="cta-btn">Generate my sight tape →</a>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-copy">© 2025 SightTapeGen · Free for bowhunters</span>
+  <a href="https://buymeacoffee.com/SightTapeGen" target="_blank" class="coffee-btn">☕ Buy me a coffee</a>
+</footer>
+</body>
+</html>
