@@ -41,6 +41,18 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:14px 2
 .nav-links a:hover{color:var(--text);}
 @media(max-width:600px){.nav-links{display:none;}}
 
+/* TESTIMONIALS */
+.testimonials{border-top:1px solid var(--border);padding:32px 24px;background:var(--bg2);}
+.testimonials-inner{max-width:860px;margin:0 auto;}
+.testimonials-title{font-size:12px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;text-align:center;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:700px){.testimonials-grid{grid-template-columns:1fr;}}
+@media(max-width:900px){.testimonials-grid{grid-template-columns:1fr 1fr;}}
+.tcard{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px;}
+.tcard-stars{color:#111;font-size:11px;letter-spacing:1px;margin-bottom:8px;}
+.tcard-body{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:12px;}
+.tcard-author{font-size:11px;color:var(--text3);font-weight:500;}
+
 /* FOOTER */
 .site-footer{border-top:1px solid var(--border);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;background:var(--bg);flex-wrap:wrap;gap:12px;}
 .footer-copy{font-size:12px;color:var(--text3);}
@@ -264,13 +276,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <option value="80">80 yards 🔒</option>
           <option value="100">100 yards 🔒</option>
         </select>
-        <span class="lock-hint" id="lock-hint">🔒 Unlock long range for $5</span>
+        <span class="lock-hint" id="lock-hint">🔒 Unlock for $5, one-time, for shooting beyond 70 yards</span>
         <span class="unlocked-badge" id="unlocked-badge">✓ Long range unlocked</span>
       </div>
       <div class="f"><label>Increments</label>
         <select id="inc">
-          <option value="10" selected>Every 10 yards</option>
+          <option value="1">Every yard</option>
           <option value="5">Every 5 yards</option>
+          <option value="10" selected>Every 10 yards</option>
         </select>
       </div>
     </div>
@@ -313,10 +326,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="paywall-icon">🎯</div>
     <div class="paywall-price">$5 · one-time unlock</div>
     <div class="paywall-title">Unlock long-range tapes</div>
-    <div class="paywall-sub">Generate precise sight tapes up to 100 yards — built for western hunting, spot-and-stalk, and competitive 3D archery.</div>
+    <div class="paywall-sub">Generate precise sight tapes up to 100 yards, built for hunters and 3D archers who shoot long range.</div>
     <div class="paywall-features">
       <div class="paywall-feature"><div class="paywall-check">✓</div> 80, 90, and 100 yard tapes</div>
-      <div class="paywall-feature"><div class="paywall-check">✓</div> Every 5-yard increment option</div>
+      <div class="paywall-feature"><div class="paywall-check">✓</div> Every yard increment option</div>
       <div class="paywall-feature"><div class="paywall-check">✓</div> Unlocked permanently on this device</div>
     </div>
     <a href="#" id="paywall-buy-btn" class="paywall-btn" onclick="storeReturnState()">Unlock for $5 →</a>
@@ -336,9 +349,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-title">What bowhunters are saying</div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-body">"Generated my tape in two minutes and it was dead-on at 60 yards first session. Used to take me half a day messing with pins."</div>
+        <div class="tcard-author">Jake M. — Colorado elk hunter</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-body">"Finally understand why my old tape was off — entered my actual chrono speed instead of guessing IBO and everything clicked. Simple and accurate."</div>
+        <div class="tcard-author">Ryan T. — 3D archery competitor</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-body">"Unlocked the 100-yard range for long range shooting. Worth every cent. My tape is spot on out to 90 yards and I'd never have bothered doing this math by hand."</div>
+        <div class="tcard-author">Derek S. — Montana mule deer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <span class="footer-copy">© 2025 SightTapeGen · Free for bowhunters</span>
-  <a href="https://buymeacoffee.com/SightTapeGen" target="_blank" class="coffee-btn">☕ Buy me a coffee</a>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
